@@ -1,13 +1,7 @@
-########################################################################################################
-# README
-#
-# This folder contains code and data for the paper:
-#
-# Dynamic topic modeling of the COVID-19 Twitter narrative among U.S. governors and cabinet executives
-#
-# Author: Hao Sha
-#
-########################################################################################################
+This folder contains code and data for the paper:
+
+Sha, H.; Al Hasan, M.; Mohler, G.; and Brantingham, P.J. Dynamic topic modeling of the COVID-19 Twitter narrative among U.S. governors and cabinet executives.
+
 
 The code is tested in Python 3.7.5. See requirements.txt for the packages required.
 
