@@ -24,15 +24,15 @@ The code is tested in Python 3.7.5. See requirements.txt for the packages requir
 
 1. Keyword expansion:
 
-	script/keyword_extraction_kl.py 
+	```script/keyword_extraction_kl.py``` 
 
 2. Collecting COVID-19 tweets:
 
-	script/get_covid_tweets_kl.py
+	```script/get_covid_tweets_kl.py```
 
 3. Sort tweets in time ascending order:
 
-	script/sort_by_time.py
+	```script/sort_by_time.py```
 
 
 4. Prepare data in HBTM input formats
