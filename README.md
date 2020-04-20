@@ -1,102 +1,91 @@
+# htbm_covid19_twitter
+
+## Cite:
 This folder contains code and data for the paper:
 
 Sha, H.; Al Hasan, M.; Mohler, G.; and Brantingham, P.J. Dynamic topic modeling of the COVID-19 Twitter narrative among U.S. governors and cabinet executives.
 
-
+## Note:
 The code is tested in Python 3.7.5. See requirements.txt for the packages required.
 
-./hbtm_var_mu
+## Layout:
 
-	Matlab code for HBTM, and intermediate data
+./hbtm_var_mu -- Matlab code for HBTM (HBTM_var_mu), and intermediate data
 
-./query_results
+./query_results -- raw tweets by politicians using Twitter API 
 
-	raw tweets by politicians using Twitter API 
+./data -- preprocessd data (COVID-19 related tweets) and intermediate data
 
-./data
-
-	preprocessd data (COVID-19 related tweets) and intermediate data
-
-./name_handle_party
-
-	politicians meta data (names, Twitter handles, job titles, party affiliations)
+./name_handle_party -- politicians meta data (names, Twitter handles, job titles, party affiliations)
  
-./script
+./script -- scripts for data preparation and post-analysis
 
-	scripts for data preparation and post-analysis
+## Run: 
 
-	The following is the step-by-step procedure. 
+1. Keyword expansion:
 
-	1. Keyword expansion:
+	script/keyword_extraction_kl.py 
 
-		keyword_extraction_kl.py 
+2. Collecting COVID-19 tweets:
 
+	script/get_covid_tweets_kl.py
 
-	2. Collecting COVID-19 tweets:
+3. Sort tweets in time ascending order:
 
-		get_covid_tweets_kl.py
-
-
-	3. Sort tweets in time ascending order:
-
-		sort_by_time.py
+	script/sort_by_time.py
 
 
-	4. Prepare data in HBTM input formats
+4. Prepare data in HBTM input formats
 
-		all topics:
+   - all topics:
 
-			prepare_data_all.py
+	script/prepare_data_all.py
 
-		subtopics:
+   - subtopics:
 
-			prepare_data_subtopic.py
+	script/prepare_data_subtopic.py
 
 
-	5. Run HBTM on Matlab:
+5. Run HBTM on Matlab:
+ 
+	hbtm_var_mu/run_hbtm_var_mu_hs.m
 
-		go to ./hbtm_var_mu and run:
+6. Estimate coherence scores:
+
+   - do lda and estimate uci coherence
+
+	lda_coh.py 
+
+   - estimate uci coherence for HBTM
+
+	hawkes_coh.py
+
+   - plot coh HBTM vs. LDA
 	 
-			run_hbtm_var_mu_hs.m
-
-
-	6. Estimate coherence scores:
-
-		do lda and estimate uci coherence
-
-			lda_coh.py 
-
-		estimate uci coherence for HBTM
-
-			hawkes_coh.py
-
-		plot coh HBTM vs. LDA
+	plot_coh.py
 	 
-			plot_coh.py
-	 
-	7. Plot cluster (topic) timeline 
+7. Plot cluster (topic) timeline 
 
-		plot_topic_pin.py
-		plot_topic_pin_risk.py
-		plot_topic_pin_vaccine.py
-		plot_topic_pin_testing.py
+	plot_topic_pin.py
+	plot_topic_pin_risk.py
+	plot_topic_pin_vaccine.py
+	plot_topic_pin_testing.py
 
-	8. Show dominant parties in clusters
+8. Show dominant parties in clusters
 
-		get_cluster_most_party.py
+	get_cluster_most_party.py
 
+9. Plot influence networks
 
-	9. Plot influence networks
+	get_influence_network.py
+	get_influence_network_subtopic.py 
 
-		get_influence_network.py
-		get_influence_network_subtopic.py 
+10. Calculate in-degree and out-degree in influence networks
 
-	10. Calculate in-degree and out-degree in influence networks
+	get_influence_in_out_degree.py
+	get_influence_in_out_degree_subtopic.py
 
-		get_influence_in_out_degree.py
-		get_influence_in_out_degree_subtopic.py
+11. Get user spontaneous and triggering rates
 
-	11. Get user spontaneous and triggering rates
-
-		get_mu_theta_by_users.py
+	get_mu_theta_by_users.py
 
