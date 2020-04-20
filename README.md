@@ -39,53 +39,58 @@ The code is tested in Python 3.7.5. See requirements.txt for the packages requir
 
    - all topics:
 
-	script/prepare_data_all.py
+	```script/prepare_data_all.py```
 
    - subtopics:
 
-	script/prepare_data_subtopic.py
+	```script/prepare_data_subtopic.py```
 
 
 5. Run HBTM on Matlab:
  
-	hbtm_var_mu/run_hbtm_var_mu_hs.m
+	```hbtm_var_mu/run_hbtm_var_mu_hs.m```
 
 6. Estimate coherence scores:
 
    - do lda and estimate uci coherence
 
-	lda_coh.py 
+	```script/lda_coh.py``` 
 
    - estimate uci coherence for HBTM
 
-	hawkes_coh.py
+	```script/hawkes_coh.py```
 
    - plot coh HBTM vs. LDA
 	 
-	plot_coh.py
+	```script/plot_coh.py```
 	 
-7. Plot cluster (topic) timeline 
+7. Plot cluster (topic) timeline
 
-	plot_topic_pin.py
-	plot_topic_pin_risk.py
-	plot_topic_pin_vaccine.py
-	plot_topic_pin_testing.py
-
+	```
+	script/plot_topic_pin.py
+	script/plot_topic_pin_risk.py
+	script/plot_topic_pin_vaccine.py
+	script/plot_topic_pin_testing.py
+	```
 8. Show dominant parties in clusters
 
-	get_cluster_most_party.py
+	```script/get_cluster_most_party.py```
 
 9. Plot influence networks
 
-	get_influence_network.py
-	get_influence_network_subtopic.py 
-
+	```
+	script/get_influence_network.py
+	script/get_influence_network_subtopic.py 
+	```
+	
 10. Calculate in-degree and out-degree in influence networks
 
-	get_influence_in_out_degree.py
-	get_influence_in_out_degree_subtopic.py
-
+	```
+	script/get_influence_in_out_degree.py
+	script/get_influence_in_out_degree_subtopic.py
+	```
+	
 11. Get user spontaneous and triggering rates
 
-	get_mu_theta_by_users.py
+	```script/get_mu_theta_by_users.py```
 
